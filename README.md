@@ -1,7 +1,7 @@
 # ProgramingExercises
 This repository is for students to download exercises.
 
-##Structure
+## Structure
 Each branch contain an exercise for a specific course.
 The course will be in the name of the branch.
 Each branch will contain the following:
