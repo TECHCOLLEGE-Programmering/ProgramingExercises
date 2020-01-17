@@ -3,14 +3,26 @@ using System.Collections.Generic;
 
 namespace Dice
 {
+    /// <summary>
+    /// Main program class
+    /// </summary>
     class Program
     {
-        //Public string that cannot be changed
+        /// <summary>
+        /// Title string
+        /// </summary>
+        /// <value>
+        /// Used to write in the menu
+        /// </value>
+        /// <remarks>
+        /// Public string that cannot be changed
+        /// </remarks>
         public const string TITLE = " | GP-1-TheDice | Data & Kommunikation TECHCOLLEGE";
-        //The program entry method (The main method)
+        /// <summary>
+        /// The program entry method (The main method)
+        /// </summary>
         static void Main(string[] args)
         {
-
             Console.WriteLine("Task: GP-1-TheDice"+TITLE);
             Console.WriteLine("======================");
             Console.WriteLine("Press a key to begin");
@@ -21,25 +33,50 @@ namespace Dice
         }
         
     }
-    /**
-    DO NOT MODIFY UserInterface
-    This is the user interface. It takes commands from user and displays user choices.
-    **/
+    /// <summary>
+    /// DO NOT MODIFY UserInterface
+    /// This is the user interface. It takes commands from user and displays user choices.
+    /// </summary>
     class UserInterface {
+        /// <summary>
+        /// Dice property.
+        /// </summary>
+        /// <value>
+        /// A dice object
+        /// </value>
         IDice dice;
+        /// <summary>
+        /// Dice list property
+        /// </summary>
+        /// <value>
+        /// Contains a list of dice
+        /// </value>
         static List<IDice> available = new List<IDice>();
+        /// <summary>
+        /// Dice name property
+        /// </summary>
+        /// <value>
+        /// A string that contains the name of the dice
+        /// </value>
         string diceName {get { return (dice == null) ? "none" : dice.Name();}}
-        //Create a user interface and starts it
+        /// <summary>
+        /// Create a user interface and starts it
+        /// </summary>
         public static void Create() {
             UserInterface ui = new UserInterface();
             //Start by showing the menu
             ui.menu();
         }
-        //Got a new type of dice - add it to the system;
+        /// <summary>
+        /// Got a new type of dice - add it to the system
+        /// </summary>
+        /// <param name="newAvailableDice">Takes a dice</param>
         public static void AddAvailableDice(IDice newAvailableDice) {
             available.Add(newAvailableDice);
         }
-        //Show the menu interface
+        /// <summary>
+        /// Show the menu interface
+        /// </summary>
         protected void menu() {
             Console.Clear();
             Console.WriteLine("Menu"+Program.TITLE);
@@ -70,7 +107,9 @@ namespace Dice
                     break;
             }
         }
-        //Show the choose dice interface for letting user choose a dice
+        /// <summary>
+        /// Show the choose dice interface for letting user choose a dice
+        /// </summary>
         protected void chooseDice() {
             
             Console.Clear();
@@ -96,6 +135,9 @@ namespace Dice
             //Set the dice the user chose
             dice = available[command-1];
         }
+        /// <summary>
+        /// The roll dice method
+        /// </summary>
         protected void rollDice() {
             Console.Clear();
             Console.WriteLine("Menu > Roll Dice"+Program.TITLE);
@@ -113,7 +155,11 @@ namespace Dice
                 pressAnyKey("First choose a dice. Press any key to return to menu");
             }
         }
-        //Get a number from user. If user writes something that is not a number - keep trying
+        /// <summary>
+        /// Get a number from user. If user writes something that is not a number - keep trying
+        /// </summary>
+        /// <param name="hint">Takes a hint as a string</param>
+        /// <returns></returns>
         protected int getNumber(string hint="$") {
             
             if (!string.IsNullOrEmpty(hint))
@@ -132,7 +178,10 @@ namespace Dice
             }
             return num;
         }
-        //Shows a message and await user key press to continue
+        /// <summary>
+        /// Shows a message and await user key press to continue
+        /// </summary>
+        /// <param name="msg">Takes a message as a string</param>
         protected void pressAnyKey(string msg) {
             Console.WriteLine(msg);
             Console.ReadKey();

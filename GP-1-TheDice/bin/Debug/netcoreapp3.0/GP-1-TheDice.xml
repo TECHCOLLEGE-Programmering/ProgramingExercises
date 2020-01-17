@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GP-1-TheDice</name>
+    </assembly>
+    <members>
+        <member name="T:Dice.IDice">
+            <summary>
+            DO NOT MODIFY
+            This is a Dice interface. It guarantees that dices you add have a Roll() and Name() method
+            </summary>
+        </member>
+        <member name="T:Dice.Program">
+            <summary>
+            Main program class
+            </summary>
+        </member>
+        <member name="F:Dice.Program.TITLE">
+            <summary>
+            Title string
+            </summary>
+            <value>
+            Used to write in the menu
+            </value>
+            <remarks>
+            Public string that cannot be changed
+            </remarks>
+        </member>
+        <member name="M:Dice.Program.Main(System.String[])">
+            <summary>
+            The program entry method (The main method)
+            </summary>
+        </member>
+        <member name="T:Dice.UserInterface">
+            <summary>
+            DO NOT MODIFY UserInterface
+            This is the user interface. It takes commands from user and displays user choices.
+            </summary>
+        </member>
+        <member name="F:Dice.UserInterface.dice">
+            <summary>
+            Dice property.
+            </summary>
+            <value>
+            A dice object
+            </value>
+        </member>
+        <member name="F:Dice.UserInterface.available">
+            <summary>
+            Dice list property
+            </summary>
+            <value>
+            Contains a list of dice
+            </value>
+        </member>
+        <member name="P:Dice.UserInterface.diceName">
+            <summary>
+            Dice name property
+            </summary>
+            <value>
+            A string that contains the name of the dice
+            </value>
+        </member>
+        <member name="M:Dice.UserInterface.Create">
+            <summary>
+            Create a user interface and starts it
+            </summary>
+        </member>
+        <member name="M:Dice.UserInterface.AddAvailableDice(Dice.IDice)">
+            <summary>
+            Got a new type of dice - add it to the system
+            </summary>
+            <param name="newAvailableDice">Takes a dice</param>
+        </member>
+        <member name="M:Dice.UserInterface.menu">
+            <summary>
+            Show the menu interface
+            </summary>
+        </member>
+        <member name="M:Dice.UserInterface.chooseDice">
+            <summary>
+            Show the choose dice interface for letting user choose a dice
+            </summary>
+        </member>
+        <member name="M:Dice.UserInterface.rollDice">
+            <summary>
+            The roll dice method
+            </summary>
+        </member>
+        <member name="M:Dice.UserInterface.getNumber(System.String)">
+            <summary>
+            Get a number from user. If user writes something that is not a number - keep trying
+            </summary>
+            <param name="hint">Takes a hint as a string</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dice.UserInterface.pressAnyKey(System.String)">
+            <summary>
+            Shows a message and await user key press to continue
+            </summary>
+            <param name="msg">Takes a message as a string</param>
+        </member>
+    </members>
+</doc>
